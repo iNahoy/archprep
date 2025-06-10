@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# --- SCRIPT PARA REINSTALAR PACOTES PACMAN E YAY ---
-# Este script deve ser executado APÓS uma instalação LIMPA do Arch Linux.
 # Certifique-se de que os arquivos pkglist_pacman.txt e pkglist_aur.txt
 # estejam na mesma pasta que este script ou na sua pasta home.
 
@@ -9,9 +7,9 @@ echo "Verificando e atualizando a base de dados do Pacman..."
 sudo pacman -Syu --noconfirm
 
 echo "Instalando pacotes do Pacman a partir de pkglist_pacman.txt..."
+
 # Instala pacotes do Pacman, evitando reinstalar o que já existe
 sudo pacman -S --needed --noconfirm - < ~/pkglist_pacman.txt
-
 echo "Sincronizando espelhos novamente após instalação de pacotes Pacman..."
 sudo pacman -Syu --noconfirm
 
